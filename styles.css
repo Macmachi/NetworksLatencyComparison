@@ -1,0 +1,345 @@
+/*
+ Rymentz
+ MIT License
+*/
+
+body {
+    background: #1a1a1a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.network {
+    position: relative;
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    height: auto;
+    min-height: 60px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.network-type {
+    font-size: 0.875rem;
+    color: #888;
+    margin-left: 8px;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    transition: width linear;
+    opacity: 0.3;
+}
+
+.stats-overlay {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 25px 0 45px;
+}
+
+.stats-overlay-only {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    color: white;
+}
+
+.network-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 14px;
+    align-items: center;
+}
+
+.network-wrapper {
+    position: relative;
+}
+
+.network-name {
+    font-weight: bold;
+    min-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.latency {
+    color: #888;
+    margin-left: auto;
+    padding-left: 20px;
+    white-space: nowrap;
+    min-width: 60px;
+    text-align: right;
+}
+
+.blocks-stats {
+    color: white;
+}
+
+.trilemma-ratings {
+    display: flex;
+    gap: 20px;
+    margin-left: 20px;
+    flex-wrap: wrap;
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+.rating-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-label {
+    font-size: 12px;
+    min-width: 10px;
+}
+
+.star {
+    color: gold;
+    font-size: 16px;
+}
+
+.star-empty {
+    color: #444;
+    font-size: 16px;
+}
+
+.bitcoin .progress-bar { background: #f7931a; }
+.ethereum .progress-bar { background: #627eea; }
+.solana .progress-bar { background: #14f195; }
+.avalanche .progress-bar { background: #e84142; }
+.kaspa-main .progress-bar { background: #ff00ff; }
+.kaspa-test .progress-bar { background: #00ffff; }
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #333;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background: #444;
+}
+
+.simulation-speed {
+    color: #888;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.time-display {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.legend {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    height: auto;
+    position: relative;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #888;
+    margin: 10px 0;
+}
+
+.card-link {
+    display: inline-block;
+    background: #333;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.card-link:hover {
+    background: #444;
+}
+
+.donation-code {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: 14px;
+    color: #888;
+    word-break: break-all;
+}
+
+.footer-note {
+    margin-top: 20px;
+    padding: 15px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #888;
+    text-align: left;
+}
+
+.text-red-500 {
+    color: #ef4444;
+}
+
+.text-orange-500 {
+    color: #f97316;
+}
+
+.text-green-500 {
+    color: #22c55e;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .network {
+        padding: 15px;
+    }
+
+    .stats-overlay {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 5px;
+    }
+    
+    .network-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .network-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .network-type {
+        margin-left: 0; /* Enlève la marge à gauche */
+    }
+
+    .network-name {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .trilemma-ratings {
+        margin: 0;
+        display: flex;
+        flex-direction: column; 
+        gap: 8px; 
+        padding: 0;
+        width: 100%; 
+    }
+
+    .rating-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .rating-label {
+        font-size: 13px;
+        min-width: auto;
+    }
+
+    .rating-stars {
+        margin-left: auto;
+    }
+
+    .latency {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .chart-container {
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .network {
+        padding: 12px;
+    }
+
+    .stats-overlay {
+        gap: 10px;
+    }
+
+    .trilemma-ratings {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

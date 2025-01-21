@@ -1,0 +1,82 @@
+<!-- 
+Project name: Protocol Benchmark
+Version: v1.0.0
+Author: Rymentz
+License: MIT License
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain & DAG Networks Latency Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Blockchain & DAG Networks Latency Comparison</h2>
+        <div class="legend">
+            <div class="legend-item">
+                <span>⭐⭐⭐ = Excellent</span>
+            </div>
+            <div class="legend-item">
+                <span>⭐⭐ = Good</span>
+            </div>
+            <div class="legend-item">
+                <span>⭐ = Fair</span>
+            </div>
+        </div>
+        <div class="time-display">
+            Time elapsed: <span id="timeElapsed">0h 0m</span>
+        </div>
+        <div class="controls">
+            <button class="btn" onclick="adjustSpeed(0.5)">Slower</button>
+            <button class="btn" onclick="adjustSpeed(2)">Faster</button>
+            <button class="btn" onclick="resetSimulation()">Reset</button>
+            <span class="simulation-speed">Speed: <span id="speedDisplay">1000x</span></span>
+        </div>
+        <div class="networks">
+            <script src="script.js"></script>
+        </div>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Kaspa Network Visualizer</h5>
+                    <p class="card-text">Check out our Kaspa Network Visualizer (simulation):</p>
+                    <a href="https://macmachi.github.io/kaspa-network-visualizer/" class="card-link" target="_blank">
+                        Launch Visualizer
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Support Our Work</h5>
+                    <p class="card-text">Thank you for your support! If you enjoyed my work, please consider donating:</p>
+                    <p class="card-text donation-code">
+                        <code>kaspa:qqngpnpwrfhexgu8kzk3lteu5fakh6fylmt53gt7qwtf4vttjyvfyrnr8shwa</code>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-note">
+            <p class="font-semibold mb-2">Disclaimer:</p>
+            <p class="mb-2">
+                This simulation demonstrates network latency differences in a simplified way for educational purposes. 
+                While block creation times are based on documented specifications, actual blockchain performance involves many other factors:
+            </p>
+            <ul class="list-disc ml-6 mb-2">
+                <li>Transaction throughput per block</li>
+                <li>Network conditions and congestion</li>
+                <li>Consensus mechanisms specifics</li>
+                <li>Validation requirements</li>
+                <li>Technical architecture (Blockchain, DAG, BlockDAG)</li>
+            </ul>
+            <p>
+                Real-world performance may vary. Please refer to official documentation for comprehensive technical details of each network.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
