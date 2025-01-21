@@ -2,6 +2,8 @@
 
 An interactive visualization tool comparing latency and performance between different blockchain and DAG networks in real-time.
 
+Simulation link: https://macmachi.github.io/NetworksLatencyComparison/
+
 ## 🎯 Features
 
 - Real-time network latency simulation
